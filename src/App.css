@@ -1,0 +1,14 @@
+html,
+body {
+  height: 100vh;
+  background-color: #FAF8F5;
+}
+
+.bg {
+  background-image: linear-gradient(to right top, #FAF8F5, #FAF8F5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow-x: auto;
+  overflow-y: auto;
+}
