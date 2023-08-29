@@ -1,11 +1,11 @@
 html,
 body {
   height: 100vh;
-  background-color: #FAF8F5;
+  background-color: #f9fafe;
 }
 
 .bg {
-  background-image: linear-gradient(to right top, #FAF8F5, #FAF8F5);
+  background-color: #f9fafe;
   height: 100%;
   width: 100%;
   position: absolute;

@@ -3,7 +3,7 @@
 First install node modules by running `npm install`
 Start app localy by running `npm start`
 
-To run tests, just open another tab in the terminal and run `npm test`
+To run tests, just open another tab in the terminal and run `npm test` while app is running locally
 
 ## Available Scripts
 

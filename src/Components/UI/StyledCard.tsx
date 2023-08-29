@@ -19,7 +19,7 @@ export const StyledCard = ({
         borderStyle: "solid",
         borderWidth: "1px",
         borderColor: (theme) => theme.palette.primary.main,
-        borderRadius: 4,
+        borderRadius: 3,
         mb: 4,
         mx: 1,
         p: 2,
