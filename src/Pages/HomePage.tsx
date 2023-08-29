@@ -31,7 +31,7 @@ export const HomePage = () => {
 
   return (
     <Stack spacing={2} sx={{ mb: 5, alignItems: "center", mt: 5 }}>
-      <Typography variant='h4' color='text.secondary'>
+      <Typography variant='h4' color='text.primary'>
         Ships
       </Typography>
       <Box sx={{ width: "100%" }}>

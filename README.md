@@ -1,5 +1,7 @@
 ## To run app
 
+You will need node js and npm to run the app https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
 First install node modules by running `npm install`
 Start app localy by running `npm start`
 

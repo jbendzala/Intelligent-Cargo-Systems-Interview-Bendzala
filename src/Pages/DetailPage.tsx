@@ -13,17 +13,18 @@ import { useWindowSize } from "../hooks/useWindowSize";
 const NARROW_SCREEN = 460;
 
 export const DetailPage = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const { data: reqData, isLoading, isSuccess } = useGetShipInfo();
   const shipInfoData = reqData?.data.ships;
-  const shipInfo = shipInfoData?.find((item) => item.id === +id);
+  const shipInfo = shipInfoData?.find((item) => item.id === +String(id));
+  const shipInfoDataAvailable = isSuccess && shipInfoData?.length && shipInfo;
 
   const windowSize = useWindowSize();
   const isNarrow = windowSize.width && windowSize.width < NARROW_SCREEN;
 
   return (
     <Stack alignItems='center' spacing={2} sx={{ m: 5 }}>
-      <Typography variant='h4' color='text.secondary'>
+      <Typography variant='h4' color='text.primary'>
         Detail info
       </Typography>
       <Card
@@ -39,17 +40,7 @@ export const DetailPage = () => {
           justifyContent: "center",
         }}
       >
-        {isLoading && (
-          <Stack
-            alignItems='center'
-            justifyContent='center'
-            sx={{ m: 5 }}
-            spacing={2}
-          >
-            <CircularProgress size={32} />
-          </Stack>
-        )}
-        {isSuccess && shipInfoData?.length && shipInfo ? (
+        {shipInfoDataAvailable ? (
           <Stack
             alignItems='start'
             justifyContent='center'
@@ -134,6 +125,15 @@ export const DetailPage = () => {
               </Typography>
             </Stack>
           </Stack>
+        ) : isLoading ? (
+          <Stack
+            alignItems='center'
+            justifyContent='center'
+            sx={{ m: 5 }}
+            spacing={2}
+          >
+            <CircularProgress size={32} />
+          </Stack>
         ) : (
           <Stack
             alignItems='center'
@@ -141,7 +141,7 @@ export const DetailPage = () => {
             sx={{ m: 5 }}
             spacing={2}
           >
-            <DoNotDisturb fontSize='large' />
+            <DoNotDisturb fontSize='large' sx={{ color: "text.secondary" }} />
             <Typography variant='h5' color='text.secondary'>
               No data available
             </Typography>

@@ -11,6 +11,7 @@ export const StyledCard = ({
   owner: string;
 }) => {
   const country = getOwnerName(owner);
+
   return (
     <Card
       elevation={2}

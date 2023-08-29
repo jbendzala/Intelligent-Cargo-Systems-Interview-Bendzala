@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
+const GET_SHIP_INFO = "getShipInfo" as const;
+
 const useAxiosInstance = () => {
   const apiClient = axios.create({
     baseURL: "/",
@@ -12,7 +14,5 @@ const useAxiosInstance = () => {
 export const useGetShipInfo = () => {
   const apiClient = useAxiosInstance();
 
-  return useQuery("getShipInfo" as const, () =>
-    apiClient.get(`/1nWgEE`, { withCredentials: false })
-  );
+  return useQuery(GET_SHIP_INFO, () => apiClient.get(`/1nWgEE`));
 };
